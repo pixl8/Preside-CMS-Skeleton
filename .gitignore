@@ -1,0 +1,7 @@
+/WEB-INF
+/uploads
+/application/config/LocalConfig.cfc
+/application/config/.injectedConfiguration
+/extensions
+!/extensions/README.md
+!/extensions/extensions.json
