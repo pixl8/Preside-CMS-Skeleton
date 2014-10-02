@@ -1,6 +1,6 @@
 <cfscript>
 	body     = renderView();
-	mainNav  = renderViewlet( "core.navigation.singleLevelMainNav" );
+	mainNav  = renderViewlet( "core.navigation.mainNavigation" );
 	metaTags = renderView( "/general/_pageMetaForHtmlHead" );
 	adminBar = renderView( "/general/_adminToolbar" );
 
