@@ -3,9 +3,8 @@
 <urlrewrite>
     <rule>
         <note>
-            Disable Railo Context except for local requests
+            Disable Railo Context
         </note>
-        <condition type="remote-addr" operator="notequal">^(127\.0\.0\.1|0:0:0:0:0:0:0:1)$</condition>
         <from>^/railo-context/.*$</from>
         <set type="status">404</set>
         <to last="true">/404.html</to>
