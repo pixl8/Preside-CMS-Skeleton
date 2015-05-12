@@ -14,5 +14,7 @@ component extends="preside.system.config.Config" output=false {
 
 		settings.ckeditor.defaults.stylesheets.append( "css-bootstrap" );
 		settings.ckeditor.defaults.stylesheets.append( "css-layout" );
+		
+		settings.features.websiteUsers.enabled = false;
 	}
 }
