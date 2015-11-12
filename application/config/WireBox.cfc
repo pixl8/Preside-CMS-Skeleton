@@ -1,8 +1,7 @@
-component extends="preside.system.config.WireBox" output=false {
+component extends="preside.system.config.WireBox" {
 
-	public void function configure() output=false {
+	public void function configure() {
 		super.configure();
-
 	}
 
 }

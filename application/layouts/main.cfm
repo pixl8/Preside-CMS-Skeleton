@@ -2,12 +2,12 @@
 	body     = renderView();
 	mainNav  = renderViewlet( "core.navigation.mainNavigation" );
 	metaTags = renderView( "/general/_pageMetaForHtmlHead" );
-	adminBar = renderView( "/general/_adminToolbar" );
+	adminBar = renderView( "/general/_adminToolbar"        );
 
 	event.include( "css-bootstrap" )
-	     .include( "css-layout" )
-	     .include( "js-bootstrap" )
-	     .include( "js-jquery" );
+	     .include( "css-layout"    )
+	     .include( "js-bootstrap"  )
+	     .include( "js-jquery"     );
 </cfscript>
 
 <cfoutput><!DOCTYPE html>

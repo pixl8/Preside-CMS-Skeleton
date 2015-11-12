@@ -2,9 +2,9 @@
  * Sticker bundle configuration file. See: http://sticker.readthedocs.org/
  */
 
-component output=false {
+component {
 
-	public void function configure( bundle ) output=false {
+	public void function configure( bundle ) {
 
 		bundle.addAssets(
 			  directory   = "/"
