@@ -3,9 +3,9 @@
 <urlrewrite>
     <rule>
         <note>
-            Disable Railo Context
+            Disable CFML Admin Contexts
         </note>
-        <from>^/railo-context/.*$</from>
+        <from>^/(railo-context|lucee|cfide)/.*$</from>
         <set type="status">404</set>
         <to last="true">/404.html</to>
     </rule>

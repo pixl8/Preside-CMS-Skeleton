@@ -1,1 +1,3 @@
-component output="false" extends="preside.system.BaseApplication" {}
+component extends="preside.system.BaseApplication" {
+	this.PRESIDE_APPLICTION_ID = "${site_id}";
+}

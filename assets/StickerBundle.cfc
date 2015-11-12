@@ -1,10 +1,9 @@
 /**
  * Sticker bundle configuration file. See: http://sticker.readthedocs.org/
  */
+component {
 
-component output=false {
-
-	public void function configure( bundle ) output=false {
+	public void function configure( bundle ) {
 
 		bundle.addAssets(
 			  directory   = "/"
@@ -19,4 +18,5 @@ component output=false {
 		bundle.asset( "css-bootstrap" ).before( "*" );
 		bundle.asset( "js-bootstrap" ).dependsOn( "js-jquery" );
 	}
+
 }
