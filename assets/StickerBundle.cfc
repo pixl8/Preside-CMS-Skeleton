@@ -1,7 +1,6 @@
 /**
  * Sticker bundle configuration file. See: http://sticker.readthedocs.org/
  */
-
 component {
 
 	public void function configure( bundle ) {
@@ -19,4 +18,5 @@ component {
 		bundle.asset( "css-bootstrap" ).before( "*" );
 		bundle.asset( "js-bootstrap" ).dependsOn( "js-jquery" );
 	}
+
 }
