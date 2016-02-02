@@ -1,3 +1,5 @@
-component extends="preside.system.BaseApplication" {
-	this.PRESIDE_APPLICTION_ID = "${site_id}";
+component extends="preside.system.Bootstrap" {
+	
+	super.setupApplication( id = "${site_id}" );
+
 }
