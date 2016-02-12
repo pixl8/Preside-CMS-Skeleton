@@ -5,7 +5,8 @@
         <note>
             Disable CFML Admin Contexts
         </note>
-        <from>^/(railo-context|lucee|cfide)/.*$</from>
+	<condition type="remote-addr" operator="notequal">127.0.0.1</condition>
+        <from>^/(railo-context|lucee|cfide|bluedragon)/admin.*$</from>
         <set type="status">404</set>
         <to last="true">/404.html</to>
     </rule>
