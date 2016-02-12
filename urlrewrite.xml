@@ -43,7 +43,7 @@
     <rule>
         <note>
             All request to system static assets that live under /preside/system/assets
-            should go through Railo and will be rewritten to /index.cfm
+            should go through CFML and will be rewritten to /index.cfm
         </note>
         <from>^/preside/system/assets/.*$</from>
         <to last="true">%{context-path}/index.cfm</to>
