@@ -28,6 +28,25 @@
     </rule>
 
     <rule>
+        <note>
+            Remove query string when it contains cfid, cftoken, or jsessionid.
+            This is to prevent accidental or deliberate session leaking.
+        </note>
+        <condition type="query-string" operator="equal">\b(cfid|cftoken|jsessionid)=</condition>
+        <from>^(.*)$</from>
+        <to type="permanent-redirect" last="true">$1</to>
+    </rule>
+
+    <rule>
+        <note>
+            Remove bulk of URL when it contains suspicious ;jsessionid= or ;cftoken=, etc.
+            This is to put an end to suspicious session fixation attack scanning.
+        </note>
+        <from>^(.*);(jsessionid|cftoken|cfid)=.*$</from>
+        <to type="permanent-redirect" last="true">$1</to>
+    </rule>
+
+    <rule>
         <name>Add trailing slash to directories without a trailing slash</name>
         <from>^(.*\/[^/\.]+)$</from>
         <to type="permanent-redirect" last="true">$1/</to>
