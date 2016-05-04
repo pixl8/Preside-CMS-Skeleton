@@ -4,7 +4,7 @@ component extends="preside.system.config.Config" {
 		super.configure();
 
 		settings.preside_admin_path  = "${admin_path}";
-		settings.system_user         = "sysadmin";
+		settings.system_users        = "sysadmin";
 		settings.default_locale      = "en";
 
 		settings.default_log_name    = "${site_id}";
