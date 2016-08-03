@@ -14,21 +14,6 @@
 
     <rule>
         <note>
-            All the following requests should not be allowed and should return with a 404
-            We block any request to:
-
-            * the application folder (where all the logic and views for your site lives)
-            * the uploads folder (should be configured to be somewhere else anyways)
-            * this url rewrite file!
-            * Application.cfc
-        </note>
-        <from>^/(application/|uploads/|urlrewrite\.xml\b|Application\.cfc\b)</from>
-        <set type="status">404</set>
-        <to last="true">/404.html</to>
-    </rule>
-
-    <rule>
-        <note>
             Remove query string when it contains cfid, cftoken, or jsessionid.
             This is to prevent accidental or deliberate session leaking.
         </note>
@@ -67,5 +52,20 @@
         </note>
         <from>^/preside/system/assets/.*$</from>
         <to last="true">%{context-path}/index.cfm</to>
+    </rule>
+
+    <rule>
+        <note>
+            All the following requests should not be allowed and should return with a 404
+            We block any request to:
+
+            * the application folder (where all the logic and views for your site lives)
+            * the uploads folder (should be configured to be somewhere else anyways)
+            * this url rewrite file!
+            * Application.cfc
+        </note>
+        <from>^/(application/|preside/|uploads/|urlrewrite\.xml\b|Application\.cfc\b)</from>
+        <set type="status">404</set>
+        <to last="true">/404.html</to>
     </rule>
 </urlrewrite>
