@@ -1,8 +1,9 @@
 /WEB-INF
 /uploads
 /logs
-/application/config/LocalConfig.cfc
 /application/config/.injectedConfiguration
-/extensions
-!/extensions/README.md
-!/extensions/extensions.json
+/application/extensions/*
+/preside
+!/application/extensions/README.md
+!/application/extensions/extensions.json
+.twgit*
