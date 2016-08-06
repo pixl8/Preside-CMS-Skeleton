@@ -2,12 +2,20 @@ component extends="commandbox.system.BaseCommand" {
 
 	public void function postInstall( required string directory ) {
 		print.line();
-		var appid   = ask( "Enter a site id (no spaces or special chars, e.g. amazon): " );
-		while( !_validSlug( appid ) ) {
+		var siteId = ask( "Enter a site id (no spaces or special chars, e.g. amazon): " );
+		while( !_validSlug( siteId ) ) {
 			print.line();
 			print.redLine( "Invalid site ID. Must contain only letters, numbers, - or _.");
 			print.line();
-			appid   = ask( "Enter a site ID (no spaces or special chars, e.g. amazon): " );
+			siteId   = ask( "Enter a site ID (no spaces or special chars, e.g. amazon): " );
+		}
+
+		var adminPath = ask( "Enter an admin URL path (no spaces or special chars, e.g. amazon_admin): " );
+		while( !_validSlug( adminPath ) ) {
+			print.line();
+			print.redLine( "Invalid admin URL path. Must contain only letters, numbers, - or _.");
+			print.line();
+			adminPath = ask( "Enter an admin URL path (no spaces or special chars, e.g. amazon_admin): " );
 		}
 
 		var appName = ask( "Enter an site name (e.g. Amazon.com): " );
@@ -30,11 +38,12 @@ component extends="commandbox.system.BaseCommand" {
 		var appcfc            = FileRead( appCfcPath    );
 		var boxjson           = FileRead( boxJsonPath    );
 
-		config  = ReplaceNoCase( config , "${site_id}", appid, "all" );
-		appcfc  = ReplaceNoCase( appcfc , "${site_id}", appid, "all" );
+		config  = ReplaceNoCase( config , "${site_id}", siteId, "all" );
+		config  = ReplaceNoCase( config , "${admin_path}", adminPath, "all" );
+		appcfc  = ReplaceNoCase( appcfc , "${site_id}", siteId, "all" );
 		boxjson = ReplaceNoCase( boxjson, '"name":"PresideCMS Skeleton Web Application"', '"name":"#appName#"' );
 		boxjson = ReplaceNoCase( boxjson, '"author":"Pixl8 Interactive"', '"author":"#author#"' );
-		boxjson = ReplaceNoCase( boxjson, '"slug":"preside-skeleton-webapp"', '"slug":"#appid#"' );
+		boxjson = ReplaceNoCase( boxjson, '"slug":"preside-skeleton-webapp"', '"slug":"#siteId#"' );
 
 		FileWrite( configCfcPath, config );
 		FileWrite( appCfcPath   , appcfc );
