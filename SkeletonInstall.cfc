@@ -31,23 +31,25 @@ component extends="commandbox.system.BaseCommand" {
 		print.greenLine( "");
 		print.greenLine( "Thank you. Finalizing your template now..." );
 
-		var configCfcPath     = arguments.directory & "/application/config/Config.cfc";
-		var appCfcPath        = arguments.directory & "/Application.cfc";
-		var boxJsonPath       = arguments.directory & "/box.json";
-		var config            = FileRead( configCfcPath );
-		var appcfc            = FileRead( appCfcPath    );
-		var boxjson           = FileRead( boxJsonPath    );
+		var configCfcPath       = arguments.directory & "/application/config/Config.cfc";
+		var appCfcPath          = arguments.directory & "/Application.cfc";
+		var boxJsonPath         = arguments.directory & "/box.json";
+		var boxJsonTemplatePath = arguments.directory & "/box.json.template";
+		var config              = FileRead( configCfcPath       );
+		var appcfc              = FileRead( appCfcPath          );
+		var boxjson             = FileRead( boxJsonTemplatePath );
 
 		config  = ReplaceNoCase( config , "${site_id}", siteId, "all" );
 		config  = ReplaceNoCase( config , "${admin_path}", adminPath, "all" );
 		appcfc  = ReplaceNoCase( appcfc , "${site_id}", siteId, "all" );
-		boxjson = ReplaceNoCase( boxjson, '"name":"PresideCMS Skeleton Web Application"', '"name":"#appName#"' );
-		boxjson = ReplaceNoCase( boxjson, '"author":"Pixl8 Interactive"', '"author":"#author#"' );
-		boxjson = ReplaceNoCase( boxjson, '"slug":"preside-skeleton-webapp"', '"slug":"#siteId#"' );
+		boxjson = ReplaceNoCase( boxjson, '${site_name}', appName, "all" );
+		boxjson = ReplaceNoCase( boxjson, '${site_id}', siteId, "all" );
+		boxjson = ReplaceNoCase( boxjson, '${author}', author, "all" );
 
 		FileWrite( configCfcPath, config );
 		FileWrite( appCfcPath   , appcfc );
 		FileWrite( boxJsonPath  , boxjson );
+		FileDelete( boxJsonTemplatePath );
 	}
 
 
