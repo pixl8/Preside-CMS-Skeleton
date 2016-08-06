@@ -1,0 +1,14 @@
+{
+    "name":"${site_name}",
+    "version":"1.0.0",
+    "author":"${author}",
+    "slug":"${site_id}",
+    "createPackageDirectory" : false,
+    "private":true,
+    "installPaths":{
+        "presidecms":"preside",
+    },
+    "dependencies":{
+        "presidecms":"stable"
+    }
+}
