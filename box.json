@@ -5,15 +5,15 @@
     "slug":"preside-skeleton-basic",
     "homepage":"https://github.com/pixl8/Preside-CMS-Skeleton",
     "shortDescription":"A skeleton PresideCMS application to be used as a starting point for basic applications.",
-    "createPackageDirectory" : false,
-    "type":"cms",
+    "createPackageDirectory": false,
+    "type":"preside-skeletons",
     "location":"https://github.com/pixl8/Preside-CMS-Skeleton/archive/v1.3.4.zip",
     "repository":{
         "type":"git",
         "url":"https://github.com/pixl8/Preside-CMS-Skeleton"
     },
     "installPaths":{
-        "presidecms":"preside",
+        "presidecms":"preside"
     },
     "dependencies":{
         "presidecms":"stable"
