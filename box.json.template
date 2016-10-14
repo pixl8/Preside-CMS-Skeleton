@@ -3,10 +3,10 @@
     "version":"1.0.0",
     "author":"${author}",
     "slug":"${site_id}",
-    "createPackageDirectory" : false,
+    "createPackageDirectory": false,
     "private":true,
     "installPaths":{
-        "presidecms":"preside",
+        "presidecms":"preside"
     },
     "dependencies":{
         "presidecms":"stable"
