@@ -6,7 +6,7 @@
     "createPackageDirectory" : false,
     "private":true,
     "installPaths":{
-        "presidecms":"preside",
+        "presidecms":"preside"
     },
     "dependencies":{
         "presidecms":"stable"
