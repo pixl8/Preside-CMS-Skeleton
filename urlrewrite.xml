@@ -62,9 +62,10 @@
             * the application folder (where all the logic and views for your site lives)
             * the uploads folder (should be configured to be somewhere else anyways)
             * this url rewrite file!
+            * logs
             * Application.cfc
         </note>
-        <from>^/(application/|preside/|uploads/|urlrewrite\.xml\b|Application\.cfc\b)</from>
+        <from>^/(application/|preside/|uploads/|urlrewrite\.xml\b|logs/.*\.log|Application\.cfc\b)</from>
         <set type="status">404</set>
         <to last="true">/404.html</to>
     </rule>
