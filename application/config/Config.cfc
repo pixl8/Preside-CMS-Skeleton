@@ -124,7 +124,6 @@ component extends="preside.system.config.Config" {
 			// see https://docs.preside.org/devguides/adminsystemmenu.html
 			settings.adminConfigurationMenuItems = settings.adminConfigurationMenuItems ?: []
 			settings.adminConfigurationMenuItems.append( "mycustomsettings" );
-		];
 		*/
 	}
 
@@ -159,6 +158,6 @@ component extends="preside.system.config.Config" {
 			logbox.categories.mylbcategory = { appenders='myAppender', levelMin='FATAL', levelMax='INFO' }
 
 			// etc.
-		};
+		*/
 	}
 }
