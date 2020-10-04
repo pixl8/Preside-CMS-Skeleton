@@ -4,11 +4,5 @@
     "author":"${author}",
     "slug":"${site_id}",
     "createPackageDirectory" : false,
-    "private":true,
-    "installPaths":{
-        "presidecms":"preside"
-    },
-    "dependencies":{
-        "presidecms":"stable"
-    }
+    "private":true
 }

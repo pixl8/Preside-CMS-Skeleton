@@ -50,6 +50,16 @@ component extends="commandbox.system.BaseCommand" {
 		FileWrite( appCfcPath   , appcfc );
 		FileWrite( boxJsonPath  , boxjson );
 		FileDelete( boxJsonTemplatePath );
+
+		print.greenLine( "" );
+		print.greenLine( "Installing the latest stable Preside release..." );
+		print.greenLine( "" );
+		getInstance( "packageService" ).installPackage(
+			  id                      = "presidecms"
+			, save                    = true
+			, saveDev                 = false
+			, production              = true
+		);
 	}
 
 
