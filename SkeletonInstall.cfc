@@ -21,7 +21,7 @@ component extends="commandbox.system.BaseCommand" {
 
 		do {
 			siteId = ask( message="Enter a unique site ID (no spaces or special chars, e.g. my-cool-site): " )
-			if ( !_isValidSlug( siteId ) ) {
+			if ( !_validSlug( siteId ) ) {
 				siteId = "";
 				print.line();
 				print.redLine( "Invalid site ID. Must contain only letters, numbers, - or _.");
@@ -31,7 +31,7 @@ component extends="commandbox.system.BaseCommand" {
 
 		do {
 			adminPath = ask( message="Enter an admin URL path (no spaces or special chars, e.g. admin) ", defaultResponse="admin" )
-			if ( !_isValidSlug( adminPath ) ) {
+			if ( !_validSlug( adminPath ) ) {
 				adminPath = "";
 				print.line();
 				print.redLine( "Invalid admin URL path. Must contain only letters, numbers, - or _.");
