@@ -107,7 +107,9 @@ component extends="preside.system.config.Config" {
 
 	private void function _setupFeatures() {
 		settings.features.formbuilder.enabled         = true;
+		settings.features.formbuilder2.enabled        = true;
 		settings.features.websiteUsers.enabled        = true;
+		settings.features.websiteBenefits.enabled     = false; // you really never want this, was a terrible mistake
 		settings.features.multilingual.enabled        = false;
 		settings.features.dataexport.enabled          = true;
 		settings.features.apiManager.enabled          = true;
