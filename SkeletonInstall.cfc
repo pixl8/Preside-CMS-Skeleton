@@ -33,8 +33,9 @@ component extends="commandbox.system.BaseCommand" {
 
 
 
-		print.greenLine( "");
-		print.greenLine( "Thank you. Finalizing your template now..." );
+		print.line( "");
+		print.greenLine( "Thank you. Finalizing your template now. NOTE: your admin path is set to /admin/." );
+		print.line( "");
 
 		var configCfcPath       = arguments.directory & "/application/config/Config.cfc";
 		var appCfcPath          = arguments.directory & "/Application.cfc";
