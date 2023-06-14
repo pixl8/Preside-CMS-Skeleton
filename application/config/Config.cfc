@@ -7,7 +7,8 @@ component extends="preside.system.config.Config" {
 
 // CORE COLDBOX CONFIGURE METHOD(S)
 	public void function configure() {
-		_loadCorePresideConfig(); // must come FIRST
+		super.configure(); // must come FIRST to load core preside config
+
 		_setupCommonSettings();
 		_setupRicheditor();
 		_setupAssetManager();
@@ -20,6 +21,11 @@ component extends="preside.system.config.Config" {
 
 	public void function local() {
 		super.local();
+
+		coldbox.handlersIndexAutoReload = settings.env.handlersIndexAutoReload ?: true;
+		coldbox.handlerCaching          = settings.env.handlerCaching          ?: false;
+		settings.autoSyncDb             = settings.env.autoSyncDb              ?: true;
+		settings.showerrors             = settings.env.showErrors              ?: true;
 
 		/*
 			Put your local environment overrides, here.
@@ -34,10 +40,6 @@ component extends="preside.system.config.Config" {
 	}
 
 // HELPERS
-	private void function _loadCorePresideConfig() {
-		super.configure();
-	}
-
 	private void function _setupCommonSettings() {
 		settings.preside_admin_path = "${admin_path}";
 		settings.system_users       = "sysadmin";
