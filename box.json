@@ -4,7 +4,7 @@
     "author":"Pixl8 Interactive",
     "slug":"preside-skeleton-basic",
     "homepage":"https://github.com/pixl8/Preside-CMS-Skeleton",
-    "shortDescription":"A skeleton PresideCMS application to be used as a starting point for basic applications.",
+    "shortDescription":"An empty skeleton PresideCMS application with CMS features enabled",
     "createPackageDirectory": false,
     "type":"preside-skeletons",
     "location":"https://github.com/pixl8/Preside-CMS-Skeleton/archive/v2.0.0.zip",
