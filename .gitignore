@@ -5,3 +5,4 @@
 /application/extensions/*
 /preside
 !/application/extensions/README.md
+.cfconfig.json
