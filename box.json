@@ -1,10 +1,10 @@
 {
-    "name":"PresideCMS Simple Web Skeleton",
+    "name":"Preside Empty Skeleton",
     "version":"$VERSION_NUMBER",
     "author":"Pixl8 Interactive",
     "slug":"preside-skeleton-basic",
     "homepage":"https://github.com/pixl8/Preside-CMS-Skeleton",
-    "shortDescription":"An empty skeleton PresideCMS application with CMS features enabled",
+    "shortDescription":"An empty skeleton Preside application with CMS features enabled",
     "createPackageDirectory": false,
     "type":"preside-skeletons",
     "location":"${DOWNLOAD_URL}",
