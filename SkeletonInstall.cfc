@@ -1,13 +1,15 @@
 component extends="commandbox.system.BaseCommand" {
 
 	public void function postInstall( required string directory ) {
-		print.boldLine( "CMS Website setup wizard" );
-		print.boldLine( "========================" );
+		print.line();
+		print.boldLine( "===================================" );
+		print.boldLine( "Preside Empty Skeleton setup wizard" );
+		print.boldLine( "===================================" );
 		print.line();
 		print.line( "You're nearly there. Answer a few questions and we'll get your new site setup and ready to go :)" );
 		print.line().toConsole();
 
-		var adminPath = "";
+		var adminPath = "admin";
 		var siteId    = "";
 		var appName   = "";
 		var author    = "";
@@ -29,15 +31,7 @@ component extends="commandbox.system.BaseCommand" {
 			}
 		} while( !Len( siteId ) );
 
-		do {
-			adminPath = ask( message="Enter an admin URL path (no spaces or special chars, e.g. admin) ", defaultResponse="admin" )
-			if ( !_validSlug( adminPath ) ) {
-				adminPath = "";
-				print.line();
-				print.redLine( "Invalid admin URL path. Must contain only letters, numbers, - or _.");
-				print.line();
-			}
-		} while( !Len( adminPath ) );
+
 
 		print.greenLine( "");
 		print.greenLine( "Thank you. Finalizing your template now..." );
