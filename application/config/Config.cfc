@@ -14,6 +14,7 @@ component extends="preside.system.config.Config" {
 		_setupAssetManager();
 		_setupAssetDerivatives();
 		_setupFeatures();
+		_setupLauncher();
 		_setupCustomAdminNavigation();
 		_setupInterceptors();
 		_setupLogboxLoggers();
@@ -117,6 +118,13 @@ component extends="preside.system.config.Config" {
 		settings.features.fullPageCaching.enabled     = true;
 		settings.features.assetQueue.enabled          = true;
 		settings.features.queryCachePerObject.enabled = true;
+	}
+
+	private void function _setupLauncher() {
+		/* We have installed preside-ext-launcher for you and you may want to configure it.
+
+		   See here for a guide: https://github.com/pixl8/preside-ext-launcher
+		*/
 	}
 
 	private void function _setupCustomAdminNavigation() {
