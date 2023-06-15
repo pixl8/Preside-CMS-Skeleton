@@ -1,8 +1,8 @@
 /WEB-INF
+/preside
 /uploads
 /logs
 /application/config/.injectedConfiguration
 /application/extensions/*
-/preside
 !/application/extensions/README.md
 .cfconfig.json

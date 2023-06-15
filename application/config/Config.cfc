@@ -14,6 +14,7 @@ component extends="preside.system.config.Config" {
 		_setupAssetManager();
 		_setupAssetDerivatives();
 		_setupFeatures();
+		_setupLauncher();
 		_setupCustomAdminNavigation();
 		_setupInterceptors();
 		_setupLogboxLoggers();
@@ -119,15 +120,27 @@ component extends="preside.system.config.Config" {
 		settings.features.queryCachePerObject.enabled = true;
 	}
 
+	private void function _setupLauncher() {
+		/* We have installed preside-ext-launcher for you and you may want to configure it.
+
+		   See here for a guide: https://github.com/pixl8/preside-ext-launcher
+		*/
+	}
+
 	private void function _setupCustomAdminNavigation() {
 		/* e.g.
-			// see https://docs.preside.org/devguides/adminlefthandmenu.html
-			settings.adminSideBarItems = settings.adminSideBarItems ?: [];
-			settings.adminSideBarItems.append( "blogs" );
+			we have installed preside-ext-alt-admin-theme that makes
+			use of Preside Navigation system for the top menu (among other things).
 
-			// see https://docs.preside.org/devguides/adminsystemmenu.html
-			settings.adminConfigurationMenuItems = settings.adminConfigurationMenuItems ?: []
-			settings.adminConfigurationMenuItems.append( "mycustomsettings" );
+			See the following for help with configuring the top nav for your admin:
+
+				* https://github.com/pixl8/preside-ext-alt-admin-theme, and
+				* https://docs.preside.org/devguides/adminMenuItems.html
+
+			e.g.
+
+			ArrayAppend( settings.admin.topNav, "myNavItem" );
+			// etc.
 		*/
 	}
 
