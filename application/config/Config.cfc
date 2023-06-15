@@ -129,13 +129,18 @@ component extends="preside.system.config.Config" {
 
 	private void function _setupCustomAdminNavigation() {
 		/* e.g.
-			// see https://docs.preside.org/devguides/adminlefthandmenu.html
-			settings.adminSideBarItems = settings.adminSideBarItems ?: [];
-			settings.adminSideBarItems.append( "blogs" );
+			we have installed preside-ext-alt-admin-theme that makes
+			use of Preside Navigation system for the top menu (among other things).
 
-			// see https://docs.preside.org/devguides/adminsystemmenu.html
-			settings.adminConfigurationMenuItems = settings.adminConfigurationMenuItems ?: []
-			settings.adminConfigurationMenuItems.append( "mycustomsettings" );
+			See the following for help with configuring the top nav for your admin:
+
+				* https://github.com/pixl8/preside-ext-alt-admin-theme, and
+				* https://docs.preside.org/devguides/adminMenuItems.html
+
+			e.g.
+
+			ArrayAppend( settings.admin.topNav, "myNavItem" );
+			// etc.
 		*/
 	}
 

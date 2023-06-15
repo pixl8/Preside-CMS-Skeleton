@@ -31,8 +31,6 @@ component extends="commandbox.system.BaseCommand" {
 			}
 		} while( !Len( siteId ) );
 
-
-
 		print.line( "");
 		print.greenLine( "Thank you. Finalizing your template now. NOTE: your admin path is set to /admin/." );
 		print.line( "");
@@ -60,12 +58,10 @@ component extends="commandbox.system.BaseCommand" {
 		print.greenLine( "" );
 		print.greenLine( "Installing the latest stable Preside release..." );
 		print.greenLine( "" );
-		getInstance( "packageService" ).installPackage(
-			  id                      = "presidecms"
-			, save                    = true
-			, saveDev                 = false
-			, production              = true
-		);
+
+		command( "install" ).params( "presidecms" ).run();
+		command( "install" ).params( "preside-ext-launcher" ).run();
+		command( "install" ).params( "preside-ext-alt-admin-theme" ).run();
 	}
 
 	private boolean function _validSlug( required string slug ) {
