@@ -9,27 +9,17 @@ component extends="commandbox.system.BaseCommand" {
 		print.line( "You're nearly there. Answer a few questions and we'll get your new site setup and ready to go :)" );
 		print.line().toConsole();
 
-		var adminPath = "admin";
-		var siteId    = "";
 		var appName   = "";
-		var author    = "";
+		var siteId    = "";
 
 		while( !Len(Trim( appName ) ) ) {
-			appName = ask( "Enter a site title (e.g. My Cool Site): " );
-		}
-		while( !Len(Trim( author ) ) ) {
-			author = ask( "Enter the site author (e.g. Super L33t Software co.): " );
+			appName = ask( "Enter a name for your site (e.g. My Cool Site): " );
 		}
 
-		do {
-			siteId = ask( message="Enter a unique site ID (no spaces or special chars, e.g. my-cool-site): " )
-			if ( !_validSlug( siteId ) ) {
-				siteId = "";
-				print.line();
-				print.redLine( "Invalid site ID. Must contain only letters, numbers, - or _.");
-				print.line();
-			}
-		} while( !Len( siteId ) );
+		siteId = LCase( ReReplace( appName, "\w", "-", "all" ) );
+		siteId = ReReplace( appName, "-+", "-", "all" );
+		siteId = ReReplace( appName, "^-+", "" );
+		siteId = ReReplace( appName, "-+$", "" );
 
 		print.line( "");
 		print.greenLine( "Thank you. Finalizing your template now. NOTE: your admin path is set to /admin/." );
@@ -44,11 +34,9 @@ component extends="commandbox.system.BaseCommand" {
 		var boxjson             = FileRead( boxJsonTemplatePath );
 
 		config  = ReplaceNoCase( config , "${site_id}", siteId, "all" );
-		config  = ReplaceNoCase( config , "${admin_path}", adminPath, "all" );
 		appcfc  = ReplaceNoCase( appcfc , "${site_id}", siteId, "all" );
 		boxjson = ReplaceNoCase( boxjson, '${site_name}', appName, "all" );
 		boxjson = ReplaceNoCase( boxjson, '${site_id}', siteId, "all" );
-		boxjson = ReplaceNoCase( boxjson, '${author}', author, "all" );
 
 		FileWrite( configCfcPath, config );
 		FileWrite( appCfcPath   , appcfc );

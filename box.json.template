@@ -1,7 +1,7 @@
 {
     "name":"${site_name}",
     "version":"1.0.0",
-    "author":"${author}",
+    "author":"",
     "slug":"${site_id}",
     "createPackageDirectory" : false,
     "private":true

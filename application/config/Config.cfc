@@ -42,7 +42,7 @@ component extends="preside.system.config.Config" {
 
 // HELPERS
 	private void function _setupCommonSettings() {
-		settings.preside_admin_path = "${admin_path}";
+		settings.preside_admin_path = "admin";
 		settings.system_users       = "sysadmin";
 		settings.default_locale     = "en";
 		settings.default_log_name   = "${site_id}";
