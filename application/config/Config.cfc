@@ -115,7 +115,7 @@ component extends="preside.system.config.Config" {
 		settings.features.dataexport.enabled          = true;
 		settings.features.apiManager.enabled          = true;
 		settings.features.restTokenAuth.enabled       = true;
-		settings.features.fullPageCaching.enabled     = true;
+		settings.features.fullPageCaching.enabled     = false;
 		settings.features.assetQueue.enabled          = true;
 		settings.features.queryCachePerObject.enabled = true;
 	}
